@@ -45,7 +45,7 @@
 	let uniforms = {
 		uTime: { value: 0 },
 		uColor: {
-			value: new Color('rgb(255, 207, 206)')
+			value: new Color('#44acff')
 		},
 		uScroll: {
 			value: 0
