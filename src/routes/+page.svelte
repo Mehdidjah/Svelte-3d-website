@@ -25,7 +25,6 @@
 	import HeroTextIn from '$lib/components/HeroTextIn.svelte';
 	import ListItem from '$lib/components/ListItem.svelte';
 	import Card from '$lib/components/Card.svelte';
-	import Sfdr from '$lib/components/Icons/Sfdr.svelte';
 	import Github from '$lib/components/Icons/Github.svelte';
 
 	type AppearTitleComponent = Awaited<typeof import('../lib/components/AppearTitle.svelte')>['default'];
@@ -158,7 +157,6 @@
 <section class="hero">
 	<div class="layout-grid-inner">
 		<Title class="title" />
-		<Sfdr class={cn('icon-hero', $introOutStore && 'show')} />
 		<span class="sub">
 			<HeroTextIn>
 				<h2 class="h3 subtitle">Svelte-3D</h2>
@@ -424,41 +422,6 @@
 				position: absolute;
 				top: 0;
 				left: 2.5%;
-			}
-		}
-
-		:global(.icon-hero) {
-			width: mobile-vw(44px);
-			height: mobile-vw(39px);
-
-			@include desktop {
-				position: relative;
-				top: desktop-vw(395px);
-				width: desktop-vw(44px);
-				height: desktop-vw(39px);
-				transform: translate3d(0, 100%, 0);
-				opacity: 0;
-			}
-
-			// &.show {
-			// 	@include desktop {
-			// 		transition: transform $intro-duration var(--ease-out-expo),
-			// 			opacity $intro-duration var(--ease-out-expo);
-			// 		transition-delay: $delay-intro-top;
-			// 		opacity: 1;
-			// 		transform: translate3d(0, 0, 0);
-			// 	}
-			// }
-		}
-
-		:global(.icon-hero.show) {
-			@include desktop {
-				transition:
-					transform $intro-duration var(--ease-out-expo),
-					opacity $intro-duration var(--ease-out-expo);
-				transition-delay: $delay-intro-top;
-				opacity: 1;
-				transform: translate3d(0, 0, 0);
 			}
 		}
 
