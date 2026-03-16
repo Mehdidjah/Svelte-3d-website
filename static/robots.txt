@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://localhost:5173
+
+# Sitemaps
+Sitemap: https://localhost:5173/sitemap.xml

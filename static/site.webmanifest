@@ -1,0 +1,11 @@
+{
+	"name": "Svelte-3D",
+	"short_name": "Svelte-3D",
+	"description": "How Svelte-3D should feel.",
+	"theme_color": "#ff98a2",
+	"background_color": "#efefef",
+	"start_url": "/",
+	"scope": ".",
+	"display": "standalone",
+	"orientation": "portrait"
+}
