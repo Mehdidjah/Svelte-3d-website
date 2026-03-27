@@ -18,7 +18,6 @@
 	import { clamp, mapRange } from '$lib/utils/maths';
 
 	import { projects } from '$lib/content/projects';
-	import { homePageContent } from '$lib/content/pages/home';
 
 	import Button from '$lib/components/Button.svelte';
 	import Hand from '$lib/components/Hand/index.svelte';
@@ -26,6 +25,7 @@
 	import HeroTextIn from '$lib/components/HeroTextIn.svelte';
 	import ListItem from '$lib/components/ListItem.svelte';
 	import Card from '$lib/components/Card.svelte';
+	import Github from '$lib/components/Icons/Github.svelte';
 
 	type AppearTitleComponent = Awaited<typeof import('../lib/components/AppearTitle.svelte')>['default'];
 	type ParallaxComponent = Awaited<typeof import('../lib/components/Parallax.svelte')>['default'];
@@ -159,12 +159,12 @@
 		<Title class="title" />
 		<span class="sub">
 			<HeroTextIn>
-				<h2 class="h3 subtitle">{homePageContent.hero.subtitle}</h2>
+				<h2 class="h3 subtitle">Svelte-3D</h2>
 			</HeroTextIn>
 			<HeroTextIn>
 				<h2 class="p-xs tm">
 					<span>©</span>
-					{new Date().getFullYear()} {homePageContent.hero.copyrightName}
+					{new Date().getFullYear()} Mehdi
 				</h2>
 			</HeroTextIn>
 		</span>
@@ -183,18 +183,23 @@
 			</div>
 		</div>
 		<h1 class="description p-s">
-			{#each homePageContent.hero.descriptionLines as line, i (i)}
-				<HeroTextIn>
-					<p class="p-s">{line}</p>
-				</HeroTextIn>
-			{/each}
+			<HeroTextIn>
+				<p class="p-s">A new Svelte-3D website</p>
+			</HeroTextIn>
+			<HeroTextIn>
+				<p class="p-s">crafted with motion and depth in</p>
+			</HeroTextIn>
+			<HeroTextIn>
+				<p class="p-s">Mehdi's creative lab</p>
+			</HeroTextIn>
 		</h1>
 		<Button
 			class={cn('cta', $introOutStore && 'in')}
 			arrow={true}
-			href={homePageContent.hero.cta.href}
+			icon={Github}
+			href="https://github.com/Mehdidjah/Svelte-3d-website"
 		>
-			{homePageContent.hero.cta.label}
+			Check it out on github
 		</Button>
 	</div>
 </section>
@@ -202,18 +207,40 @@
 	<div class="layout-grid">
 		<h2 class="sticky h2">
 			{#if AppearTitle}
-				<AppearTitle>{homePageContent.why.title}</AppearTitle>
+				<AppearTitle>Why Svelte-3D?</AppearTitle>
 			{/if}
 		</h2>
 		<aside class="features" bind:this={whyRef}>
-			{#each homePageContent.why.features as feature, i (i)}
-				<div class="feature">
-					{#if feature.title}
-						<h3 class="title h4">{feature.title}</h3>
-					{/if}
-					<p class="p">{feature.body}</p>
-				</div>
-			{/each}
+			<div class="feature">
+				<p class="p">
+					We’ve heard all the reasons to not push 3D websites further. They can feel heavy,
+					over-designed, and hard to control. This project treats Svelte-3D as something that can
+					still feel expressive, intentional, and sharp when it is built with care.
+				</p>
+			</div>
+			<div class="feature">
+				<h3 class="title h4">Create more immersive interfaces</h3>
+				<p class="p">
+					Unlock the creative potential and impact of your web experiences. Svelte-3D pulls people
+					into the flow of the page with motion and depth that feel substantial instead of
+					decorative.
+				</p>
+			</div>
+			<div class="feature">
+				<h3 class="title h4">Keep interaction feeling fluid</h3>
+				<p class="p">
+					Give every visitor a consistent sense of weight and movement whether they use trackpads,
+					mouse wheels, or touch. Svelte-3D should feel controlled, polished, and alive from the
+					first interaction.
+				</p>
+			</div>
+			<div class="feature">
+				<h3 class="title h4">Make your animations feel connected</h3>
+				<p class="p">
+					When motion, layout, and 3D details move together, the page feels like one system. That
+					coordination is what gives Svelte-3D its rhythm and its personality.
+				</p>
+			</div>
 		</aside>
 	</div>
 </section>
@@ -223,7 +250,7 @@
 			{#if Parallax && AppearTitle}
 				<Parallax speed={-0.5} on:mounted={() => setHomePageLoadedComponentsStore('Parallax')}>
 					<p class="h2">
-						<AppearTitle>{homePageContent.rethink.title}</AppearTitle>
+						<AppearTitle>Rethinking Svelte-3D</AppearTitle>
 					</p>
 				</Parallax>
 			{/if}
@@ -231,7 +258,10 @@
 		<div class="comparison">
 			{#if Parallax}
 				<Parallax speed={0.5}>
-					<p class="p">{homePageContent.rethink.body}</p>
+					<p class="p">
+						The goal here is not gimmicks. It is to build a Svelte-3D experience where motion,
+						composition, and interaction support each other instead of competing for attention.
+					</p>
 				</Parallax>
 			{/if}
 		</div>
@@ -239,9 +269,11 @@
 	<div class="cards" bind:this={cardsRectRef}>
 		{#if HorizontalSlides}
 			<HorizontalSlides on:mounted={() => setHomePageLoadedComponentsStore('HorizontalSlides')}>
-				{#each homePageContent.rethink.cards as text, i (i)}
-					<Card class="card" number={i + 1} text={text} />
-				{/each}
+				<Card class="card" number={1} text="Performance without wasting the budget" />
+				<Card class="card" number={2} text="Fluid motion that still feels accessible" />
+				<Card class="card" number={3} text="3D that supports the story" />
+				<Card class="card" number={4} text="Animation systems that scale with the page" />
+				<Card class="card" number={5} text="Respect for native web behavior" />
 			</HorizontalSlides>
 		{/if}
 	</div>
@@ -250,13 +282,13 @@
 	<div class="inner">
 		<div class="zoom">
 			<h2 class="first h1 vh">
-				{homePageContent.solution.firstLine} <br />
-				<span class="contrast">{homePageContent.solution.contrastLine}</span>
+				so we built <br />
+				<span class="contrast">web scrolling</span>
 			</h2>
 			<h2 class="enter h3 vh">
-				{homePageContent.solution.enterTop} <br /> {homePageContent.solution.enterBottom}
+				Enter <br /> 3D WORLD
 			</h2>
-			<h2 class="second h1 vh">{homePageContent.solution.secondLine}</h2>
+			<h2 class="second h1 vh">As it should be</h2>
 		</div>
 	</div>
 </section>
@@ -264,7 +296,8 @@
 	<div class="inner">
 		<div class="layout-block intro">
 			<p class="p-l">
-				{homePageContent.featuringIntro}
+				This Svelte-3D website showcases fluid motion and 3D interactions built with Svelte and
+				Three.js, focused on performance, accessibility, and a delightful user experience.
 			</p>
 		</div>
 	</div>
@@ -289,9 +322,9 @@
 			<p class="h3">
 				{#if AppearTitle}
 					<AppearTitle on:mounted={() => setHomePageLoadedComponentsStore('AppearTitle')}
-						>{homePageContent.inUse.title}
+						>Svelte-3D
 						<br />
-						<span class="grey">{homePageContent.inUse.subtitle}</span></AppearTitle
+						<span class="grey">in use</span></AppearTitle
 					>
 				{/if}
 			</p>

@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
-	import { siteMeta } from '$lib/content/pages/site';
 
-	export let title = siteMeta.title;
-	export let description = siteMeta.description;
+	export let title = '';
+	export let description =
+		'Personal SvelteKit project by Mehdi, exploring smooth scrolling, 3D visuals, and modern front-end techniques.';
 	export let image = '';
-	export let keywords: string[] = [...siteMeta.keywords];
-	export let author = siteMeta.author;
+	export let keywords: string[] = [];
 </script>
 
 <svelte:head>
@@ -24,10 +23,10 @@
 		name="keywords"
 		content={`${keywords && keywords.length ? keywords.join(',') : keywords}`}
 	/>
-	<meta name="author" content={author} />
+	<meta name="author" content="Mehdi" />
 	<meta name="referrer" content="no-referrer" />
 	<meta name="format-detection" content="telephone=no" />
-	<meta name="geo.region" content={siteMeta.geoRegion} />
+	<meta name="geo.region" content="US" />
 
 	<link rel="manifest" href="/site.webmanifest" />
 	<meta name="msapplication-TileColor" content="#000000" />
