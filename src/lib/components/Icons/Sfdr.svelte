@@ -5,7 +5,7 @@
 </script>
 
 <svg class={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 39"
-	><title>Mehdi Portfolio 3D Hand</title><path
+	><title>GMSD 3D Hand</title><path
 		fill="#B0B0B0"
 		d="M13.5965 0H3.2677C1.4638 0 0 1.46359 0 3.26723V19.5V35.7328C0 37.5377 1.4638 39 3.2677 39H13.5965C14.7377 39 15.4104 37.7195 14.7626 36.7803L3.71868 20.7543C3.19794 19.9995 3.19794 19.0018 3.71868 18.2457L14.7626 2.21967C15.4104 1.28049 14.7377 0 13.5965 0Z"
 	/><path

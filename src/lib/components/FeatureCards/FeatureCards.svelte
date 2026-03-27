@@ -6,26 +6,23 @@
 	import { useWindowSize } from '$lib/lifecycle-functions/useWindowSize';
 	import { useScroll } from '$lib/lifecycle-functions/useScroll';
 	import { clamp, mapRange } from '$lib/utils/maths';
+	import { homePageContent } from '$lib/content/pages/home';
 
 	import Card from '../Card.svelte';
 	import Card2 from './Card2.svelte';
 
 	const cards: Array<{ text: string | Component }> = [
-		{ text: 'Run scroll in the main thread' },
+		{ text: homePageContent.featureCards.cards[0] },
 		{
 			text: Card2
 		},
-		{ text: 'Made for 2022+' },
-		{ text: 'Bring your own animation library' },
-		{
-			text: 'CONTROL THE SCROLL EASING DURATION'
-		},
-		{ text: 'Use any element as scroller' },
-		{ text: 'Enjoy horizontal + vertical support' },
-		{ text: 'Feel free to use “position: sticky” again' },
-		{
-			text: 'touch support'
-		}
+		{ text: homePageContent.featureCards.cards[1] },
+		{ text: homePageContent.featureCards.cards[2] },
+		{ text: homePageContent.featureCards.cards[3] },
+		{ text: homePageContent.featureCards.cards[4] },
+		{ text: homePageContent.featureCards.cards[5] },
+		{ text: homePageContent.featureCards.cards[6] },
+		{ text: homePageContent.featureCards.cards[7] }
 	];
 
 	let AppearTitle: Component | null = null;
@@ -70,9 +67,9 @@
 			<p class="h3">
 				{#if AppearTitle}
 					<AppearTitle
-						>Svelte-3D brings
+						>{homePageContent.featureCards.titleFirst}
 						<br />
-						<span class="grey">the heat</span></AppearTitle
+						<span class="grey">{homePageContent.featureCards.titleSecond}</span></AppearTitle
 					>
 				{/if}
 			</p>

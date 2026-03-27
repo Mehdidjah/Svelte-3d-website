@@ -1,61 +1,47 @@
 <script lang="ts">
+	import { footerContent } from '$lib/content/pages/footer';
 </script>
 
 <footer class="theme-light footer">
 	<div class="layout-grid top hide-on-mobile">
 		<p class="first-line h1">
-			Svelte-3D is <br />
-			<span class="contrast">Open source</span>
+			{footerContent.desktop.introPrefix} <br />
+			<span class="contrast">{footerContent.desktop.introHighlight}</span>
 		</p>
 		<div class="shameless-plug">
-			<p class="h4">Mehdi</p>
+			<p class="h4">{footerContent.desktop.foundersTitle}</p>
 			<p class="p-s">
-				Front-end developer building <br /> smooth 3D web experiences
+				{footerContent.desktop.foundersText} <br /> {footerContent.desktop.foundersSubtext}
 			</p>
 		</div>
 		<p class="last-line h1">
-			& open to <span class="hide-on-desktop">&nbsp;</span> features,
-			<br /> forks or prs&nbsp;
+			{footerContent.desktop.outroLine1} <br />
+			<br /> {footerContent.desktop.outroLine2}
 		</p>
-		<!-- <Button
-        class={s.cta}
-        arrow
-        icon={<GitHub />}
-        href="https://github.com/Mehdidjah/Svelte-3d-website"
-      >
-        Let's build together
-      </Button> -->
 	</div>
 	<div class="layout-block top hide-on-desktop">
 		<div class="shameless-plug">
-			<p class="h4">Mehdi</p>
+			<p class="h4">{footerContent.mobile.title}</p>
 			<p class="p-s">
-				Front-end developer building <br /> smooth 3D web experiences
+				{footerContent.mobile.line1} <br /> {footerContent.mobile.line2}
 			</p>
 		</div>
 		<p class="first-line h1">
-			Svelte-3D is <br />
-			<span class="contrast">Open source</span>
-			<br /> & open to <br /> features, forks or prs
+			{footerContent.mobile.introPrefix} <br />
+			<span class="contrast">{footerContent.mobile.introHighlight}</span>
+			<br /> {footerContent.mobile.introSuffix1} <br /> {footerContent.mobile.introSuffix2}
 		</p>
 	</div>
 	<div class="bottom">
 		<div class="links">
-			<a class="link p-xs" href="https://github.com/Mehdidjah">GitHub</a>
-			<a class="link p-xs" href="https://github.com/Mehdidjah/Svelte-3d-website">Project repo</a>
+			{#each footerContent.links as link, i (i)}
+				<a class="link p-xs" href={link.href}>{link.label}</a>
+			{/each}
 		</div>
 		<p class="p-xs tm">
 			<span>©</span>
-			{new Date().getFullYear()} Mehdi
+			{new Date().getFullYear()} {footerContent.copyrightName}
 		</p>
-		<!-- <Button
-        class={cn(s.cta, 'hide-on-desktop')}
-        arrow
-        icon={<GitHub />}
-        href="https://github.com/Mehdidjah/Svelte-3d-website"
-      >
-        Let's build together
-      </Button> -->
 	</div>
 </footer>
 

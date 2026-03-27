@@ -18,6 +18,7 @@
 	import Intro from '$lib/components/Intro.svelte';
 	import Scrollbar from '$lib/components/Scrollbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { siteMeta } from '$lib/content/pages/site';
 
 	import '$lib/styles/global.scss';
 
@@ -104,7 +105,12 @@
 </script>
 
 <!-- <RealViewport /> -->
-<CustomHead title="Svelte-3D" />
+<CustomHead
+	title={siteMeta.title}
+	description={siteMeta.description}
+	keywords={[...siteMeta.keywords]}
+	author={siteMeta.author}
+/>
 <div class={cn(`theme-${$themeStore}`, 'layout', className)}>
 	<!-- <PageTransition /> -->
 	<Intro />

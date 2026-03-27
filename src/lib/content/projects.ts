@@ -1,27 +1,27 @@
 export const projects = [
 	{
-		title: 'Empty 1',
-		source: 'Coming soon',
+		title: 'Infrastructure Modernization Program',
+		source: 'Enterprise IT Infrastructure',
 		href: '#'
 	},
 	{
-		title: 'Empty 2',
-		source: 'Coming soon',
+		title: 'Mobile Field Operations Platform',
+		source: 'Cross-platform Mobile Engineering',
 		href: '#'
 	},
 	{
-		title: 'Empty 3',
-		source: 'Coming soon',
+		title: 'Business Workflow Automation Suite',
+		source: 'Custom Software Development',
 		href: '#'
 	},
 	{
-		title: 'Empty 4',
-		source: 'Coming soon',
+		title: 'Managed Security and Monitoring',
+		source: 'Cybersecurity Services',
 		href: '#'
 	},
 	{
-		title: 'Empty 5',
-		source: 'Coming soon',
+		title: 'Hybrid Cloud Integration',
+		source: 'Cloud and DevOps Infrastructure',
 		href: '#'
 	}
 ];
